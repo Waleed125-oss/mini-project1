@@ -1,0 +1,79 @@
+/* Global Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; transition: background 0.3s, color 0.3s; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #1e293b; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
+.navbar .logo { font-size: 1.5rem; font-weight: bold; color: #fff; }
+.nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.nav-links a { color: #fff; transition: 0.3s; }
+.nav-links a:hover, .active { color: #38bdf8; }
+#theme-toggle { background: transparent; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; margin-left: 15px; }
+
+/* Hero */
+.hero { text-align: center; padding: 80px 20px; background: linear-gradient(135deg,#2563eb,#1e40af); color: #fff; }
+.hero h1 { font-size: 2.5rem; }
+.hero p { font-size: 1.1rem; margin-top: 10px; }
+.hero .btn { background: #fff; color: #1e40af; padding: 12px 24px; border-radius: 5px; margin-top: 20px; display: inline-block; font-size: 1rem; }
+
+/* Sections */
+section { padding: 50px 10%; text-align: center; }
+.features .feature-grid, .services .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 20px; }
+.card { background: #f8fafc; padding: 20px; border-radius: 10px; transition: transform 0.3s; }
+.card:hover { transform: translateY(-5px); }
+.card img { width: 60px; margin-bottom: 10px; }
+
+/* Contact */
+.contact form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; width: 100%; }
+.contact input, .contact textarea { padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; width: 100%; }
+.contact textarea { min-height: 120px; resize: vertical; }
+.contact .btn { background: #2563eb; color: #fff; border: none; padding: 12px; cursor: pointer; border-radius: 5px; font-size: 1rem; }
+
+/* Footer */
+footer { background: #1e293b; color: #fff; text-align: center; padding: 15px; margin-top: 40px; }
+
+/* Dark / Light Mode */
+body.light { background: #f9fafb; color: #111827; }
+body.dark { background: #0f172a; color: #e2e8f0; }
+body.dark .navbar { background: #0f172a; }
+body.dark .card { background: #1e293b; color: #e2e8f0; }
+body.dark footer { background: #0f172a; }
+
+/* Scroll Animations */
+[data-animate] { opacity: 0; transform: translateY(40px); transition: all 0.6s ease-out; }
+[data-animate].active { opacity: 1; transform: translateY(0); }
+
+/* ========================
+   RESPONSIVE DESIGN 
+======================== */
+
+/* Tablets (portrait & landscape) */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+  section { padding: 40px 8%; }
+}
+
+/* Large phones (iPhone 14, Pro Max, Galaxy S series) */
+@media (max-width: 768px) {
+  .nav-links { flex-direction: column; gap: 15px; width: 100%; margin-top: 10px; text-align: center; }
+  .hero { padding: 60px 15px; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .features .feature-grid, .services .service-grid { grid-template-columns: 1fr; }
+}
+
+/* Small phones (iPhone SE, older Androids) */
+@media (max-width: 480px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .logo { margin-bottom: 10px; font-size: 1.3rem; }
+  #theme-toggle { align-self: flex-end; margin-top: -40px; }
+  .hero { padding: 50px 10px; }
+  .hero h1 { font-size: 1.6rem; }
+  .hero p { font-size: 0.95rem; }
+  .hero .btn { padding: 10px 18px; font-size: 0.9rem; }
+  section { padding: 35px 5%; }
+  footer { font-size: 0.9rem; }
+}
